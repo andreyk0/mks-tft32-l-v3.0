@@ -1,17 +1,10 @@
-# Rust RTIC STM32 project template
+# Experimental Rust firmware for Makerbase MKS TFT32_L V3.0
 
-Basic config defaults to stm32f1.
+* [MKS Hardware](https://github.com/makerbase-mks/MKS-TFT-Hardware/tree/master/MKS%20TFT32/MKS%20TFT32_L%20V3.x)
+* [LCD ILI9328](https://cdn-shop.adafruit.com/datasheets/ILI9328.pdf)
 
-# Links
+An experiment in reusing an LCD panel from an old 3D printer for other projects.
+Only goes as far as initializing the display and providing a [DrawTarget](https://docs.rs/embedded-graphics/0.6.2/embedded_graphics/trait.DrawTarget.html) driver
+to use with `embedded_graphics`.
 
-* [Awesome embedded Rust](https://github.com/rust-embedded/awesome-embedded-rust)
-* [Cortex-m RTIC examples](https://github.com/rtic-rs/cortex-m-rtic/tree/master/examples)
-* [RTIC RS Book](https://rtic.rs/0.5/book/en/)
-* [RTIC RS](https://github.com/rtic-rs)
-
-
-# New repo
-
-```bash
-rsync -av --exclude '.git' --ignore-existing ./ ../new-repo/
-```
+TODO: fix HSE (board has 25Hhz but that input crashes `stm32f1xx_hal`).
